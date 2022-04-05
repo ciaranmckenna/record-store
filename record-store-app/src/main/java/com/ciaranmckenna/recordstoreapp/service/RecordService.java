@@ -4,8 +4,6 @@ import com.ciaranmckenna.recordstoreapp.model.Record;
 import com.ciaranmckenna.recordstoreapp.repository.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
