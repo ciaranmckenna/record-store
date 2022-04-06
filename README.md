@@ -21,18 +21,23 @@ you should also have access to `javac`. You can check this by running:
 
 `javac --version`8
 
-### Up and Running 
+### Up and Running Options
 
 From the terminal run the following `./record-store-app-0.0.1-SNAPSHOT.jar`
 
-From Intellij right click and run `CompanyRegistryApplication.java` 
+From Intellij right click and run `RecordStoreApplication` 
 
 Alternative terminal launch, within the structure of `record-store-app` run the following `./mvnw spring-boot:run`
 
-Interaction with Postman is needed for calling APIs
+Run `mvn spring-boot:run`
+
+### Interaction with Postman is needed for calling APIs
 
 Generating of data using postman is done with the following http POST request API call 
 
-
+GET /records 			        - Get all records
+GET /records/{id}		      - Get record by ID
+GET /records{id}/artist	  - Get record by ID with artist information
+GET /records/artist		    - Get all records with artist information
 
 
