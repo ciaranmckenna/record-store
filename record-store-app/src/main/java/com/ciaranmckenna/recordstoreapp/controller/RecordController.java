@@ -47,4 +47,10 @@ public class RecordController {
         return ResponseEntity.ok(recordService.getRecordWithArtistInformation(id));
     }
 
+    @GetMapping("/artist")
+    private ResponseEntity<RecordWithArtist> getAllRecordsWithArtistInformation()
+    {
+        return ResponseEntity.ok(recordService.getAllRecordsWithArtistInformation());
+    }
+
 }

@@ -46,4 +46,13 @@ public class RecordService {
         return new RecordWithArtist(artist.get().getId(), artist.get().getFirstName(), artist.get().getLastName(), record.getId(), record.getName());
     }
 
+    public RecordWithArtist getAllRecordsWithArtistInformation() {
+
+        List<Record> recordList = recordRepository.findAll();
+
+        List <Artist> artistList = artistRepository.findAll();
+
+        return new RecordWithArtist(artistList, recordList);
+    }
+
 }
