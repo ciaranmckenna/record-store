@@ -1,44 +1,25 @@
 package com.ciaranmckenna.recordstoreapp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import static javax.persistence.FetchType.*;
 
 @Entity
-@Table
 public class Record {
 
-    @Column
     @Id
     @GeneratedValue
     private Integer id;
-    @Lob
-    @Column
-    private String title;
-    @ManyToOne(fetch = LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private Artist artist;
+    private String name;
+    private Integer artistId;
 
     public Record() {
     }
 
-    public Record(Integer id, String title) {
+    public Record(final Integer id, final String title, final Integer artistId) {
         this.id = id;
-        this.title = title;
+        this.name = title;
+        this.artistId = artistId;
     }
 
     public Integer getId() {
@@ -49,11 +30,20 @@ public class Record {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String title) {
+        this.name = title;
     }
+
+    public Integer getArtistId() {
+        return artistId;
+    }
+
+    public void setArtistId(Integer artistId) {
+        this.artistId = artistId;
+    }
+
 }
