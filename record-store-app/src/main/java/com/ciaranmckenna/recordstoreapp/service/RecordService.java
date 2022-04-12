@@ -43,7 +43,7 @@ public class RecordService {
 
         Optional<Artist> artist = artistRepository.findById(record.getArtistId());
 
-        return new RecordWithArtist(artist.get().getId(), artist.get().getFirstName(), artist.get().getLastName(), record.getId(), record.getName());
+        return new RecordWithArtist(artist.get().getArtistId(), artist.get().getFirstName(), artist.get().getLastName(), record.getRecordId(), record.getName());
     }
 
     public RecordWithArtist getAllRecordsWithArtistInformation() {
