@@ -36,8 +36,11 @@ Run `mvn spring-boot:run`
 Generating of data using postman is done with the following http POST request API call 
 
 GET /records 			        - Get all records
+
 GET /records/{id}		      - Get record by ID
+
 GET /records{id}/artist	  - Get record by ID with artist information
+
 GET /records/artist		    - Get all records with artist information
 
 
