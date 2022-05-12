@@ -41,16 +41,11 @@ public class RecordController {
         return ResponseEntity.ok(recordService.save(record));
     }
 
-    @GetMapping("/{id}/artist")
-    private ResponseEntity<RecordWithArtist> getRecordWithArtistInformation(@PathVariable("id") final Integer id)
+    /*@GetMapping("/{id}/artist")
+    private ResponseEntity<Record> getRecordWithArtistInformation(@PathVariable("id") final Integer id)
     {
         return ResponseEntity.ok(recordService.getRecordWithArtistInformation(id));
-    }
+    }*/
 
-    @GetMapping("/artist")
-    private ResponseEntity<RecordWithArtist> getAllRecordsWithArtistInformation()
-    {
-        return ResponseEntity.ok(recordService.getAllRecordsWithArtistInformation());
-    }
 
 }

@@ -37,7 +37,7 @@ public class RecordService {
         return recordRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    public RecordWithArtist getRecordWithArtistInformation(Integer id) {
+    /*public RecordWithArtist getRecordWithArtistInformation(Integer id) {
 
         Record record = getById(id);
 
@@ -53,6 +53,6 @@ public class RecordService {
         List <Artist> artistList = artistRepository.findAll();
 
         return new RecordWithArtist(artistList, recordList);
-    }
+    }*/
 
 }
