@@ -41,11 +41,5 @@ public class RecordController {
         return ResponseEntity.ok(recordService.save(record));
     }
 
-    /*@GetMapping("/{id}/artist")
-    private ResponseEntity<Record> getRecordWithArtistInformation(@PathVariable("id") final Integer id)
-    {
-        return ResponseEntity.ok(recordService.getRecordWithArtistInformation(id));
-    }*/
-
 
 }
