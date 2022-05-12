@@ -1,25 +1,44 @@
 package com.ciaranmckenna.recordstoreapp.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Record {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "name")
     private String name;
-    private Integer artistId;
+    /*@Column(name = "artist_Id")
+    private Integer artistId;*/
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id")
+    private Artist artist;
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
 
     public Record() {
     }
 
-    public Record(final Integer id, final String title, final Integer artistId) {
+    public Record(final Integer id, final String title, Artist artist) {
         this.id = id;
         this.name = title;
-        this.artistId = artistId;
+        //this.artistId = artistId;
     }
 
     public Integer getId() {
@@ -38,12 +57,12 @@ public class Record {
         this.name = title;
     }
 
-    public Integer getArtistId() {
+    /*public Integer getArtistId() {
         return artistId;
     }
 
     public void setArtistId(Integer artistId) {
         this.artistId = artistId;
-    }
+    }*/
 
 }
