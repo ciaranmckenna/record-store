@@ -1,5 +1,6 @@
 package com.ciaranmckenna.recordstoreapp.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Record {
     /*@Column(name = "artist_Id")
     private Integer artistId;*/
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "artist_id", referencedColumnName = "id")
     private Artist artist;
 
