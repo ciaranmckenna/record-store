@@ -17,8 +17,6 @@ public class Record {
     private Integer id;
     @Column(name = "name")
     private String name;
-    /*@Column(name = "artist_Id")
-    private Integer artistId;*/
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "artist_id", referencedColumnName = "id")
@@ -35,10 +33,9 @@ public class Record {
     public Record() {
     }
 
-    public Record(final Integer id, final String title, Artist artist) {
+    public Record(final Integer id, final String title) {
         this.id = id;
         this.name = title;
-        //this.artistId = artistId;
     }
 
     public Integer getId() {
@@ -56,13 +53,5 @@ public class Record {
     public void setName(String title) {
         this.name = title;
     }
-
-    /*public Integer getArtistId() {
-        return artistId;
-    }
-
-    public void setArtistId(Integer artistId) {
-        this.artistId = artistId;
-    }*/
 
 }
